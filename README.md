@@ -74,3 +74,27 @@ C3D export requires:
 ```bash
 pip install ezc3d
 ```
+
+## 3. Run M³ behavioral manifold analysis
+
+The package also includes the original M³ analysis scripts in `m3_analysis/`:
+
+```text
+m3_analysis/
+├── m3_2D.py
+├── m3_2D_single.py
+├── m3_3D.py
+└── README_m3_analysis.md
+```
+
+After reconstructing 4-view ADPT results into 3D keypoint CSV files, place the reconstructed files in the input directory expected by the M³ scripts or modify the `data_path` and `save_path` variables in each script.
+
+Typical usage:
+
+```bash
+python m3_analysis/m3_2D_single.py
+python m3_analysis/m3_2D.py
+python m3_analysis/m3_3D.py
+```
+
+`m3_2D_single.py` is for solitary/single-animal analysis, `m3_2D.py` is for paired-animal 2D UMAP analysis, and `m3_3D.py` is for paired-animal 3D UMAP robustness/ablation analysis.
